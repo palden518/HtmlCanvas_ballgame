@@ -1,35 +1,46 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Ball Game</title>
     <style>
-      canvas {
-        border: 1px solid #255;
-        background-color: #f1f1f1;
-      }
+      
     </style>
-  </head>
-  <body onload="startGame()">
-    <script>
-      function startGame() {
-        myGameArea.start();
-        myGamePiece = new component(30, 30, "red", 10, 120);
-      }
+</head>
+<body>
+    <script src="events.js"></script>
+    <div id="score">Score: 0</div>
+    <canvas>
+    </canvas>
+    
+    <div class="controls">
+        
+        
+        <div class="button-group">
+            <button id="startBtn">Start</button>
+            <button id="addBallBtn" disabled>Add Ball</button>
+            <button id="changeColorBtn" disabled>Change Ball Colour</button>
+            <button id="restartBtn">Restart</button>
+        </div>
+        
+        <div class="button-group">
+            <button id="increaseSpeedBtn" disabled>Increase Speed</button>
+            <button id="decreaseSpeedBtn" disabled>Decrease Speed</button>
+        </div>
+        
+        <div class="button-group">
+            <button id="addSquareBtn" disabled>Add Square</button>
+        </div>
+        
+        <div class="arrow-keys">
+            <button id="upBtn" disabled>UP</button>
+            <button id="leftBtn" disabled>LEFT</button>
+            <button id="downBtn" disabled>DOWN</button>
+            <button id="rightBtn" disabled>RIGHT</button>
+        </div>
+    </div>
 
-      var myGameArea = {
-        canvas: document.createElement("canvas"),
-        start: function () {
-          this.width = width;
-          this.height = height;
-          this.x = x;
-          this.y = y;
-          ctx = myGameArea.context;
-          ctx.fillStyle = color;
-          ctx.fillRect(this.x, this.y, this.width, this.height);
-        },
-      };
-    </script>
-
-    <p>We have created a game area! (or at least an empty canvas)</p>
-  </body>
+</body>
 </html>
